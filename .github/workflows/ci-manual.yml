@@ -3,7 +3,7 @@ name: Manual Publish Production Docker Imaage
 on: workflow_dispatch
 
 jobs:
-  # build image from local sources and publish it to the Kava private AWS ECR repo
+  # build image from local sources and publish it to the Fury private AWS ECR repo
   build-push-docker-image-to-ecr:
     uses: ./.github/workflows/ci-build-push-docker-image-to-ecr.yml
     with:

@@ -7,7 +7,7 @@ index 374b4a6091..78bbdf3522 100644
  #, elixir-autogen, elixir-format
  msgid "Version"
 -msgstr ""
-+msgstr "v5.1.5-kava-bc38c81"
++msgstr "v5.1.5-fury-bc38c81"
  
  #: lib/block_scout_web/templates/address_contract_verification/new.html.eex:33
  #, elixir-autogen, elixir-format

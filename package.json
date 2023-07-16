@@ -1,7 +1,7 @@
 {
-  "name": "kava-blockscout-build",
+  "name": "fanfury/fury-blockscout-build",
   "version": "0.0.0",
-  "description": "Project for building and testing kava blockscout docker images",
+  "description": "Project for building and testing fury blockscout docker images",
   "scripts": {},
   "author": "",
   "license": "NOLICENSE",

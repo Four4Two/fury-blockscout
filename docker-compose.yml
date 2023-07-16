@@ -1,21 +1,21 @@
 ---
 version: "3"
 services:
-  # run single validator kava node to provide a local kava network for development and testing of the blockscout service end to end
-  kava:
-    image: kava/kava:latest
-    entrypoint: /docker/kava/kava-entrypoint.sh
+  # run single validator fury node to provide a local fury network for development and testing of the blockscout service end to end
+  fury:
+    image: fanfury/fury:latest
+    entrypoint: /docker/fury/fury-entrypoint.sh
     env_file: .env
     volumes:
-      - ./kava:/docker/kava
+      - ./fury:/docker/fury
     ports:
-      - "${KAVA_HOST_COSMOS_RPC_PORT}:${KAVA_CONTAINER_COSMOS_RPC_PORT}"
-      - "${KAVA_HOST_EVM_RPC_PORT}:${KAVA_CONTAINER_EVM_RPC_PORT}"
+      - "${FURY_HOST_COSMOS_RPC_PORT}:${FURY_CONTAINER_COSMOS_RPC_PORT}"
+      - "${FURY_HOST_EVM_RPC_PORT}:${FURY_CONTAINER_EVM_RPC_PORT}"
     # expose ports for other services to be able to connect to within
     # the default docker-compose network
     expose:
-      - "${KAVA_CONTAINER_COSMOS_RPC_PORT}"
-      - "${KAVA_CONTAINER_EVM_RPC_PORT}"
+      - "${FURY_CONTAINER_COSMOS_RPC_PORT}"
+      - "${FURY_CONTAINER_EVM_RPC_PORT}"
   postgres:
     env_file: .env
     build: "./db"

@@ -1,6 +1,6 @@
-# Kava Blockscout Ethereum Explorer
+# Fury Blockscout Ethereum Explorer
 
-This repository contains a docker build for a Kava branded and configured Blockscout used to power explorer.kava.io.
+This repository contains a docker build for a Fury branded and configured Blockscout used to power explorer.fury.io.
 
 ## Usage
 

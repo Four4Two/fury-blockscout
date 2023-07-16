@@ -46,7 +46,7 @@ WORKDIR /src
 
 # The frontend relys on dependencies installed by mix (similar to ruby on rails where css/js/other assets are included via gems)
 COPY --from=backend-builder /src/blockscout/ /src/blockscout/
-COPY ./assets/kava-logo.png /src/blockscout/apps/block_scout_web/assets/static/images/kava-logo.png
+COPY ./assets/fury-logo.png /src/blockscout/apps/block_scout_web/assets/static/images/fury-logo.png
 
 # Build the user interface (block_scout_web/assets) and then install the solc npm package (explorer)
 RUN cd blockscout/apps/block_scout_web/assets \

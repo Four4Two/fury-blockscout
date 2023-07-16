@@ -1,4 +1,4 @@
-name: Build & Publish Kava customized Blockscout Docker Images to AWS ECR Repo
+name: Build & Publish Fury customized Blockscout Docker Images to AWS ECR Repo
 
 on:
   workflow_call:
@@ -24,7 +24,7 @@ jobs:
         uses: jpribyl/action-docker-layer-caching@v0.1.1
         # Ignore the failure of a step and avoid terminating the job.
         continue-on-error: true
-      # build image that will be tagged kava-blockscout:local
+      # build image that will be tagged fanfury/fury-blockscout
       - name: build production docker image
         run: make build
       # generate a git commit hash to be used as image tag
@@ -34,7 +34,7 @@ jobs:
       - name: Tag and push docker images to Amazon ECR
         env:
             REGISTRY: 843137275421.dkr.ecr.us-east-1.amazonaws.com
-            REPOSITORY: kava-blockscout
+            REPOSITORY: fanfury/fury-blockscout
             IMAGE_TAG: ${{ steps.commit-hash.outputs.short }}
             AWS_ACCESS_KEY_ID:  ${{ secrets.CI_AWS_KEY_ID }}
             AWS_SECRET_ACCESS_KEY: ${{ secrets.CI_AWS_KEY_SECRET }}
@@ -42,10 +42,10 @@ jobs:
         run: |
             aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 843137275421.dkr.ecr.us-east-1.amazonaws.com
 
-            docker tag kava-blockscout:local $REGISTRY/$REPOSITORY:$IMAGE_TAG
+            docker tag fanfury/fury-blockscout $REGISTRY/$REPOSITORY:$IMAGE_TAG
             docker push $REGISTRY/$REPOSITORY:$IMAGE_TAG
 
-            docker tag kava-blockscout:local $REGISTRY/$REPOSITORY:latest
+            docker tag fanfury/fury-blockscout $REGISTRY/$REPOSITORY:latest
             docker push $REGISTRY/$REPOSITORY:latest
         # Finally, "Post Run jpribyl action-docker-layer-caching@v0.1.1",
         # which is the process of saving the docker cache, will be executed.

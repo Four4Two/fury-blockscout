@@ -8,7 +8,7 @@ jobs:
   # run default ci checks against main branch
   default-checks:
     uses: ./.github/workflows/ci-default.yml
-  # build image from local sources and publish it to the Kava private AWS ECR repo
+  # build image from local sources and publish it to the Fury private AWS ECR repo
   build-push-docker-image-to-ecr:
     needs: [default-checks]
     uses: ./.github/workflows/ci-build-push-docker-image-to-ecr.yml

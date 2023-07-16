@@ -1,6 +1,6 @@
 # Blockscout Service Architecture
 
-This [directory](./) contains technical documentation and diagrams for developers and operators of the kava blockscout service to use while running or developing the service.
+This [directory](./) contains technical documentation and diagrams for developers and operators of the fury blockscout service to use while running or developing the service.
 
 ## Editable Diagrams
 
