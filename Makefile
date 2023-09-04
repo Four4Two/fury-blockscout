@@ -43,8 +43,8 @@ publish:
 .PHONY: hotfix-release
 # build a production image using local sources and push it to the remote repository using tag `hotfix
 hotfix-release: publish
-	docker tag ${IMAGE_NAME}:${PRODUCTION_IMAGE_TAG} fanfury/${IMAGE_NAME}:hotfix && \
-	docker push fanfury/${IMAGE_NAME}:hotfix
+	docker tag ${IMAGE_NAME}:${PRODUCTION_IMAGE_TAG} ${IMAGE_NAME}:hotfix && \
+	docker push ${IMAGE_NAME}:hotfix
 
 .PHONY: release
 # build and push an image using local sources and tagged according to values
